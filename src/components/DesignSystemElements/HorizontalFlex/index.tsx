@@ -6,7 +6,7 @@ interface PropsType{
   justifyContent: string;
 }
 
-export const FlexContainer: React.FC<PropsType> = ({ children, justifyContent }) => {
+export const HorizontalFlex: React.FC<PropsType> = ({ children, justifyContent }) => {
   return(
     <S.HorizontalFlex
       justifyContent={justifyContent}

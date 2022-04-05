@@ -5,8 +5,9 @@ import { FullScreenContainer } from '../components/DesignSystemElements/FullScre
 import { Header } from '../components/DesignSystemElements/Header/index';
 import { Heading } from '../components/DesignSystemElements/Heading/index';
 import { FluidContainer } from '../components/DesignSystemElements/FluidContainer/index';
-import { Flex } from '../components/DesignSystemElements/Flex/index';
-
+import { HorizontalFlex } from '../components/DesignSystemElements/HorizontalFlex/index';
+import { TableBegginer } from '../components/TableBegginer/index';
+ 
 const Home: NextPage = () => {
 
   const percentageGeneral = ((0/88)*100).toFixed(2)
@@ -31,6 +32,11 @@ const Home: NextPage = () => {
           {`Tier-1: Beginner Projects (${percentageBegginer})%`} 
         </Heading>
       </FluidContainer>
+      <HorizontalFlex
+        justifyContent="center"
+      >
+        <TableBegginer />
+      </HorizontalFlex>
       <FluidContainer>
         <Heading variant="h2">
           {`Tier-2: Intermediate Projects (${percentageIntermediate})%`} 
