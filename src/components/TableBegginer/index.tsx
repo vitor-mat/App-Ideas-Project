@@ -9,6 +9,7 @@ import { Th } from '../DesignSystemElements/table/Th/index';
 import { Tbody } from '../DesignSystemElements/table/Tbody/index';
 import { Td } from '../DesignSystemElements/table/Td/index';
 import { Tfoot } from '../DesignSystemElements/table/Tfoot/index';
+import { AnchorLink } from '../DesignSystemElements/Link';
 
 export const TableBegginer: React.FC = () => {
 
@@ -25,7 +26,11 @@ export const TableBegginer: React.FC = () => {
       </Thead>
       <Tbody>
         <Tr>
-          <Td>Bin2Dec</Td>
+          <Td>
+            <AnchorLink href="/">
+              Bin2Dec
+            </AnchorLink>
+          </Td>
           <Td>Binary-to-Decimal number converter</Td>
           <Td>1-Beginner</Td>
         </Tr>
