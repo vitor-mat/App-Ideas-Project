@@ -1,10 +1,10 @@
 import { NextPage } from 'next';
 
-const Bin2Dec = () => {
+import { Navegation } from '../../../components/Navegation';
+
+const Bin2Dec: NextPage = () => {
   return(
-    <div>
-      Bin2Dec
-    </div>
+    <Navegation />
   )
 }
 
