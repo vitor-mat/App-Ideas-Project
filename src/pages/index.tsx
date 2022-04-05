@@ -5,8 +5,15 @@ import { FullScreenContainer } from '../components/DesignSystemElements/FullScre
 import { Header } from '../components/DesignSystemElements/Header/index';
 import { Heading } from '../components/DesignSystemElements/Heading/index';
 import { FluidContainer } from '../components/DesignSystemElements/FluidContainer/index';
+import { Flex } from '../components/DesignSystemElements/Flex/index';
 
 const Home: NextPage = () => {
+
+  const percentageGeneral = ((0/88)*100).toFixed(2)
+  const percentageBegginer = ((0/35)*100).toFixed(2)
+  const percentageIntermediate = ((0/33)*100).toFixed(2)
+  const percentageAdvanced = ((0/20)*100).toFixed(2)
+
   return (
     <FullScreenContainer>
       <Head>
@@ -16,9 +23,24 @@ const Home: NextPage = () => {
       </Head>
       <Header>
         <Heading variant="h1">
-          App Ideas
+        {`App Ideas (${percentageGeneral})%`} 
         </Heading>
       </Header>
+      <FluidContainer>
+        <Heading variant="h2">
+          {`Tier-1: Beginner Projects (${percentageBegginer})%`} 
+        </Heading>
+      </FluidContainer>
+      <FluidContainer>
+        <Heading variant="h2">
+          {`Tier-2: Intermediate Projects (${percentageIntermediate})%`} 
+        </Heading>
+      </FluidContainer>
+      <FluidContainer>
+        <Heading variant="h2">
+          {`Tier-3: Advanced Projects (${percentageAdvanced})%`} 
+        </Heading>
+      </FluidContainer>
     </FullScreenContainer>
   )
 }
