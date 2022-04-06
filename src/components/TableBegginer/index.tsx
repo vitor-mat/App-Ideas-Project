@@ -1,5 +1,3 @@
-import { useRouter } from 'next/router';
-
 import React from 'react';
 
 import { Table } from '../DesignSystemElements/table/Table/index';
@@ -13,8 +11,6 @@ import { AnchorLink } from '../DesignSystemElements/Link';
 
 export const TableBegginer: React.FC = () => {
 
-  const router = useRouter()
-
   return (
     <Table whenInView="Desktop">
       <Thead>
@@ -27,7 +23,7 @@ export const TableBegginer: React.FC = () => {
       <Tbody>
         <Tr>
           <Td>
-            <AnchorLink href="/">
+            <AnchorLink href="/projects/begginer/bin2dec">
               Bin2Dec
             </AnchorLink>
           </Td>
