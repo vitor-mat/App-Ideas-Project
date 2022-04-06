@@ -6,5 +6,5 @@ interface HorizontalFlexType{
 
 export const HorizontalFlex = styled.div<HorizontalFlexType>`
   display: flex;
-  ${({justifyContent}) => `${justifyContent};`}
+  ${({justifyContent}) => `justify-content: ${justifyContent};`}
 `
