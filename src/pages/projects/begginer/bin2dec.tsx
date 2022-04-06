@@ -3,9 +3,13 @@ import { NextPage } from 'next';
 import { Navegation } from '../../../components/Navegation';
 import { HorizontalFlex } from '../../../components/DesignSystemElements/HorizontalFlex';
 import { Heading } from '../../../components/DesignSystemElements/Heading';
+import { Form } from '../../../components/DesignSystemElements/Form';
 import { Button } from '../../../components/DesignSystemElements/Button';
 
 const Bin2Dec: NextPage = () => {
+
+  const handleSubmit = () => {}
+
   return(
     <>
       <Navegation />
@@ -19,9 +23,11 @@ const Bin2Dec: NextPage = () => {
       <HorizontalFlex
         justifyContent="center"
       >
-        <Button>
-          Convert
-        </Button>
+        <Form onSubmit={handleSubmit}>
+          <Button>
+            Convert
+          </Button>
+        </Form>
       </HorizontalFlex>
     </>
   )
