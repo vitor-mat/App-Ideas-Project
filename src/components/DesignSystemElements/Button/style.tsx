@@ -20,7 +20,7 @@ export const Button = styled.button<ButtonType>`
   margin-top: ${({marginTop}) => marginTop}px;
   cursor: pointer;
   background: ${colors.yellow["100"]};
-  transition: .3s linear;
+  transition: .1s linear;
   font-weight: 700;
   font-size: 18px;
   background: ${({backgroundColor}) => backgroundColor ? `${backgroundColor}` : ""};
