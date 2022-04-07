@@ -85,6 +85,13 @@ const Bin2Dec: NextPage = () => {
     setInputNumberBin("")
   }
 
+
+  const handleNumberMaxOfCharacters = (inputValue: string) => {
+    if(inputNumberBin.length < 6 || inputNumberBin.length > inputValue.length){
+      setInputNumberBin(inputValue)
+    }
+  }
+
   return(
     <>
       <Navegation />
@@ -99,7 +106,7 @@ const Bin2Dec: NextPage = () => {
         justifyContent="center"
       >
         <Form onSubmit={e => handleSubmit(e)}>
-          <Input placeHolder="Type your number" type="number" inputVariableState={inputNumberBin} inputFunctionState={e => setInputNumberBin(e.target.value)} />
+          <Input placeHolder="Type your number" type="number" inputVariableState={inputNumberBin} inputFunctionState={e => handleNumberMaxOfCharacters(e.target.value)} />
           <Alert variant="Erro" message={errorMessage} visible={errorVisibilitStatus}/>
            <Button>
             Convert
