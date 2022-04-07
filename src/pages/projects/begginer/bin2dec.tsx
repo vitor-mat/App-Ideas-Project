@@ -32,6 +32,10 @@ const Bin2Dec: NextPage = () => {
       alert("Error: Your number is lower than zero.")
     }
 
+    if(isInputValueInteger()){
+      alert("Error: Your number is not integer.")
+    }
+
   }
 
   const isInputEmptyValidation = () => {
@@ -44,6 +48,14 @@ const Bin2Dec: NextPage = () => {
 
   const isNotInputValueLowerThanZero = () => {
     if(Number(inputNumberBin) >= 0){
+      return false
+    }
+
+    return true
+  }
+
+  const isInputValueInteger = () => {
+    if(Number.isInteger(Number(inputNumberBin))){
       return false
     }
 
