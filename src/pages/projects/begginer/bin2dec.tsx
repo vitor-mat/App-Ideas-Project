@@ -9,14 +9,19 @@ import { Heading } from '../../../components/DesignSystemElements/Heading';
 import { Form } from '../../../components/DesignSystemElements/Form';
 import { Input } from '../../../components/DesignSystemElements/Input';
 import { Button } from '../../../components/DesignSystemElements/Button';
+import { Text } from '../../../components/DesignSystemElements/Text';
 
 const Bin2Dec: NextPage = () => {
 
   const [inputNumberBin, setInputNumberBin] = React.useState("")
 
+  const numberDecConvertedToBin = 0
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
   }
+
+
 
   return(
     <>
@@ -37,6 +42,13 @@ const Bin2Dec: NextPage = () => {
             Convert
           </Button>
         </Form>
+      </HorizontalFlex>
+      <HorizontalFlex
+        justifyContent="center"
+      >
+        <Text>
+          {numberDecConvertedToBin}
+        </Text>
       </HorizontalFlex>
     </>
   )
