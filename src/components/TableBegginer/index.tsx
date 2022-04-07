@@ -23,7 +23,7 @@ export const TableBegginer: React.FC = () => {
       <Tbody>
         <Tr>
           <Td>
-            <AnchorLink href="/projects/begginer/bin2dec">
+            <AnchorLink href="/projects/begginer/dec2bin">
               Dec2Bin
             </AnchorLink>
           </Td>
