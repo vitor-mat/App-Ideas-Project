@@ -16,6 +16,8 @@ const Bin2Dec: NextPage = () => {
 
   const [inputNumberBin, setInputNumberBin] = React.useState("")
 
+  const [errorVisibilitStatus, setErrorVisibilityStatus] = React.useState(false)
+
   const numberDecConvertedToBin = 0
 
   const handleSubmit = (e: FormEvent) => {
@@ -26,15 +28,15 @@ const Bin2Dec: NextPage = () => {
   const inputValidation = () => {
     
     if(isInputEmptyValidation()){
-      alert("Error: Input is empty.")
+      setErrorVisibilityStatus(true)
     }
 
     if(isNotInputValueLowerThanZero()){
-      alert("Error: Your number is lower than zero.")
+      setErrorVisibilityStatus(true)
     }
 
     if(isInputValueInteger()){
-      alert("Error: Your number is not integer.")
+      setErrorVisibilityStatus(true)
     }
 
   }
@@ -78,7 +80,7 @@ const Bin2Dec: NextPage = () => {
       >
         <Form onSubmit={e => handleSubmit(e)}>
           <Input placeHolder="Type your number" type="number" inputVariableState={inputNumberBin} inputFunctionState={e => setInputNumberBin(e.target.value)} />
-          <Alert variant="Erro" message="something wrong is not correct"/>
+          <Alert variant="Erro" message="something wrong is not correct" visible={errorVisibilitStatus}/>
            <Button>
             Convert
           </Button>
