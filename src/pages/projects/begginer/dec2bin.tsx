@@ -17,7 +17,7 @@ const Bin2Dec: NextPage = () => {
   const [inputNumberDec, setInputNumberDec] = React.useState("")
   const [errorVisibilitStatus, setErrorVisibilityStatus] = React.useState(false)
   const [errorMessage, setErrorMessage] = React.useState("")
-  const [numberDecConvertedToBin, setNumberDecConvertedToBin] = React.useState(0)
+  const [numberDecConvertedToBin, setNumberDecConvertedToBin] = React.useState("")
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
@@ -77,7 +77,7 @@ const Bin2Dec: NextPage = () => {
   }
 
   const convertInputDecNumberToBin = () => {
-    setNumberDecConvertedToBin(Number(Number(inputNumberDec).toString(2)))
+    setNumberDecConvertedToBin(Number(inputNumberDec).toString(2))
     clearInputValue()
   }
 
