@@ -14,7 +14,7 @@ import { Alert } from '../../../components/DesignSystemElements/Alert';
 
 const Bin2Dec: NextPage = () => {
 
-  const [inputNumberBin, setInputNumberBin] = React.useState("")
+  const [inputNumberDec, setInputNumberDec] = React.useState("")
   const [errorVisibilitStatus, setErrorVisibilityStatus] = React.useState(false)
   const [errorMessage, setErrorMessage] = React.useState("")
   const [numberDecConvertedToBin, setNumberDecConvertedToBin] = React.useState(0)
@@ -53,7 +53,7 @@ const Bin2Dec: NextPage = () => {
   }
 
   const isInputEmptyValidation = () => {
-    if(inputNumberBin.length){
+    if(inputNumberDec.length){
       return false
     }
 
@@ -61,7 +61,7 @@ const Bin2Dec: NextPage = () => {
   }
 
   const isNotInputValueLowerThanZero = () => {
-    if(Number(inputNumberBin) >= 0){
+    if(Number(inputNumberDec) >= 0){
       return false
     }
 
@@ -69,7 +69,7 @@ const Bin2Dec: NextPage = () => {
   }
 
   const isInputValueInteger = () => {
-    if(Number.isInteger(Number(inputNumberBin))){
+    if(Number.isInteger(Number(inputNumberDec))){
       return false
     }
 
@@ -77,18 +77,18 @@ const Bin2Dec: NextPage = () => {
   }
 
   const convertInputDecNumberToBin = () => {
-    setNumberDecConvertedToBin(Number(Number(inputNumberBin).toString(2)))
+    setNumberDecConvertedToBin(Number(Number(inputNumberDec).toString(2)))
     clearInputValue()
   }
 
   const clearInputValue = () => {
-    setInputNumberBin("")
+    setInputNumberDec("")
   }
 
 
   const handleNumberMaxOfCharacters = (inputValue: string) => {
-    if(inputNumberBin.length < 6 || inputNumberBin.length > inputValue.length){
-      setInputNumberBin(inputValue)
+    if(inputNumberDec.length < 6 || inputNumberDec.length > inputValue.length){
+      setInputNumberDec(inputValue)
     }
   }
 
@@ -106,7 +106,7 @@ const Bin2Dec: NextPage = () => {
         justifyContent="center"
       >
         <Form onSubmit={e => handleSubmit(e)}>
-          <Input placeHolder="Type your number" type="number" inputVariableState={inputNumberBin} inputFunctionState={e => handleNumberMaxOfCharacters(e.target.value)} />
+          <Input placeHolder="Type your number" type="number" inputVariableState={inputNumberDec} inputFunctionState={e => handleNumberMaxOfCharacters(e.target.value)} />
           <Alert variant="Erro" message={errorMessage} visible={errorVisibilitStatus}/>
            <Button>
             Convert
