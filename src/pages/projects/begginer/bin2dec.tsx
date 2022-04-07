@@ -17,11 +17,14 @@ const Bin2Dec: NextPage = () => {
   const [inputNumberBin, setInputNumberBin] = React.useState("")
   const [errorVisibilitStatus, setErrorVisibilityStatus] = React.useState(false)
   const [errorMessage, setErrorMessage] = React.useState("")
-  const numberDecConvertedToBin = 0
+  const [numberDecConvertedToBin, setNumberDecConvertedToBin] = React.useState(0)
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-    inputValidation()
+
+    if(inputValidation()){
+      convertInputDecNumberToBin()
+    }
   }
 
   const inputValidation = () => {
@@ -29,22 +32,23 @@ const Bin2Dec: NextPage = () => {
     if(isInputEmptyValidation()){
       setErrorMessage("Input is empty.")
       setErrorVisibilityStatus(true)
-      return
+      return false;
     }
 
     if(isNotInputValueLowerThanZero()){
       setErrorMessage("Your number is lower than zero.")
       setErrorVisibilityStatus(true)
-      return
+      return false;
     }
 
     if(isInputValueInteger()){
       setErrorMessage("Your number is not integer.")
       setErrorVisibilityStatus(true)
-      return
+      return false;
     }
 
     setErrorVisibilityStatus(false)
+    return true;
 
   }
 
@@ -70,6 +74,10 @@ const Bin2Dec: NextPage = () => {
     }
 
     return true
+  }
+
+  const convertInputDecNumberToBin = () => {
+    setNumberDecConvertedToBin(Number(Number(inputNumberBin).toString(2)))
   }
 
   return(
