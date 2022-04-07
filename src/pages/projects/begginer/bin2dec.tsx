@@ -87,7 +87,7 @@ const Bin2Dec: NextPage = () => {
         justifyContent="center"
       >
         <Heading variant="h1">
-          Bin2Dec
+          Dec2Bin
         </Heading>
       </HorizontalFlex>
       <HorizontalFlex
