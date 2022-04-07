@@ -25,6 +25,7 @@ export const Button = styled.button<ButtonType>`
   font-size: 18px;
   background: ${({backgroundColor}) => backgroundColor ? `${backgroundColor}` : ""};
   margin: ${({margin}) => margin ? `${margin}` : ""};
+  color: white;
 
   &:active{
     opacity: 0.7;

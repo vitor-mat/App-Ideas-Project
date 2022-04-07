@@ -24,7 +24,7 @@ export const TableBegginer: React.FC = () => {
         <Tr>
           <Td>
             <AnchorLink href="/projects/begginer/bin2dec">
-              Bin2Dec
+              Dec2Bin
             </AnchorLink>
           </Td>
           <Td>Binary-to-Decimal number converter</Td>
