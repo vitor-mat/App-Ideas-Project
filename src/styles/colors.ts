@@ -4,5 +4,8 @@ export const colors = {
   },
   blue: {
     100: "blue"
+  },
+  red:{
+    100: "#FFC0CB"
   }
 }

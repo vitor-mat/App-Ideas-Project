@@ -10,6 +10,7 @@ import { Form } from '../../../components/DesignSystemElements/Form';
 import { Input } from '../../../components/DesignSystemElements/Input';
 import { Button } from '../../../components/DesignSystemElements/Button';
 import { Text } from '../../../components/DesignSystemElements/Text';
+import { Alert } from '../../../components/DesignSystemElements/Alert';
 
 const Bin2Dec: NextPage = () => {
 
@@ -77,7 +78,8 @@ const Bin2Dec: NextPage = () => {
       >
         <Form onSubmit={e => handleSubmit(e)}>
           <Input placeHolder="Type your number" type="number" inputVariableState={inputNumberBin} inputFunctionState={e => setInputNumberBin(e.target.value)} />
-          <Button>
+          <Alert variant="Erro" message="something wrong is not correct"/>
+           <Button>
             Convert
           </Button>
         </Form>
