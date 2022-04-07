@@ -29,19 +29,19 @@ const Bin2Dec: NextPage = () => {
     if(isInputEmptyValidation()){
       setErrorMessage("Input is empty.")
       setErrorVisibilityStatus(true)
-      return;
+      return
     }
 
     if(isNotInputValueLowerThanZero()){
       setErrorMessage("Your number is lower than zero.")
       setErrorVisibilityStatus(true)
-      return;
+      return
     }
 
     if(isInputValueInteger()){
       setErrorMessage("Your number is not integer.")
       setErrorVisibilityStatus(true)
-      return;
+      return
     }
 
     setErrorVisibilityStatus(false)
