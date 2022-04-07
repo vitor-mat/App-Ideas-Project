@@ -78,6 +78,11 @@ const Bin2Dec: NextPage = () => {
 
   const convertInputDecNumberToBin = () => {
     setNumberDecConvertedToBin(Number(Number(inputNumberBin).toString(2)))
+    clearInputValue()
+  }
+
+  const clearInputValue = () => {
+    setInputNumberBin("")
   }
 
   return(
