@@ -19,15 +19,35 @@ const Bin2Dec: NextPage = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-    isInputEmptyValidation()
+    inputValidation()
+  }
+
+  const inputValidation = () => {
+    
+    if(isInputEmptyValidation()){
+      alert("Error: Input is empty.")
+    }
+
+    if(isNotInputValueLowerThanZero()){
+      alert("Error: Your number is lower than zero.")
+    }
+
   }
 
   const isInputEmptyValidation = () => {
     if(inputNumberBin.length){
-      return console.log(inputNumberBin)
+      return false
     }
 
-    alert("Input está vazio")
+    return true
+  }
+
+  const isNotInputValueLowerThanZero = () => {
+    if(Number(inputNumberBin) >= 0){
+      return false
+    }
+
+    return true
   }
 
   return(
