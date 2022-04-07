@@ -19,9 +19,16 @@ const Bin2Dec: NextPage = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
+    isInputEmptyValidation()
   }
 
+  const isInputEmptyValidation = () => {
+    if(inputNumberBin.length){
+      return console.log(inputNumberBin)
+    }
 
+    alert("Input está vazio")
+  }
 
   return(
     <>
