@@ -29,20 +29,8 @@ const Bin2Dec: NextPage = () => {
 
   const inputValidation = () => {
     
-    if(isInputEmptyValidation()){
-      setErrorMessage("Input is empty.")
-      setErrorVisibilityStatus(true)
-      return false;
-    }
 
-    if(isNotInputValueLowerThanZero()){
-      setErrorMessage("Your number is lower than zero.")
-      setErrorVisibilityStatus(true)
-      return false;
-    }
-
-    if(isInputValueInteger()){
-      setErrorMessage("Your number is not integer.")
+    if(isInputEmptyValidation() || isNotInputValueLowerThanZero() || isInputValueInteger()){
       setErrorVisibilityStatus(true)
       return false;
     }
@@ -54,26 +42,26 @@ const Bin2Dec: NextPage = () => {
 
   const isInputEmptyValidation = () => {
     if(inputNumberDec.length){
-      return false
+      return false;
     }
-
-    return true
+    setErrorMessage("Input is empty.")
+    return true;
   }
 
   const isNotInputValueLowerThanZero = () => {
     if(Number(inputNumberDec) >= 0){
-      return false
+      return false;
     }
-
-    return true
+    setErrorMessage("Your number is lower than zero.")
+    return true;
   }
 
   const isInputValueInteger = () => {
     if(Number.isInteger(Number(inputNumberDec))){
-      return false
+      return false;
     }
-
-    return true
+    setErrorMessage("Your number is not integer.")
+    return true;
   }
 
   const convertInputDecNumberToBin = () => {
