@@ -27,6 +27,7 @@ const Bin2Dec: NextPage = () => {
     e.preventDefault()
     if(inputValidation()){
       convertInputDecNumberToBin()
+      setTextInputColor(colors.black[100])
     }
   }
 
