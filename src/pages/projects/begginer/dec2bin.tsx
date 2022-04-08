@@ -82,10 +82,13 @@ const Bin2Dec: NextPage = () => {
     if(inputNumberDec.length < 6 || inputNumberDec.length > inputValue.length){
       setInputNumberDec(inputValue)
       setTextInputColor(colors.black[100])
+      setErrorVisibilityStatus(false)
     }
 
     if(inputValue.length == 7){
       setTextInputColor(colors.red[200])
+      setErrorVisibilityStatus(true)
+      setErrorMessage("Number max of characters for input was achived.")
     }
   }
 
