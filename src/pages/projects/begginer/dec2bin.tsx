@@ -21,6 +21,7 @@ const Bin2Dec: NextPage = () => {
   const [errorMessage, setErrorMessage] = React.useState("")
   const [numberDecConvertedToBin, setNumberDecConvertedToBin] = React.useState("")
   const [textInputColor, setTextInputColor] = React.useState(colors.black[100])
+  const [keyDownOnInput, setKeyDownOnInput] = React.useState("")
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
@@ -79,7 +80,7 @@ const Bin2Dec: NextPage = () => {
 
   const handleNumberMaxOfCharacters = (inputValue: string) => {
 
-    if(inputNumberDec.length < 6 || inputNumberDec.length > inputValue.length){
+    if((inputNumberDec.length < 6 || inputNumberDec.length > inputValue.length) && (!!Number(inputValue) || keyDownOnInput === "Backspace")){
       setInputNumberDec(inputValue)
       setTextInputColor(colors.black[100])
       setErrorVisibilityStatus(false)
@@ -90,6 +91,10 @@ const Bin2Dec: NextPage = () => {
       setErrorVisibilityStatus(true)
       setErrorMessage("Number max of characters for input was achived.")
     }
+  }
+
+  const handleKeyDownPermission = (keyDownValue: string) => {
+    setKeyDownOnInput(keyDownValue)
   }
 
   return(
@@ -110,7 +115,8 @@ const Bin2Dec: NextPage = () => {
             placeHolder="Type your number" 
             type="number" 
             inputVariableState={inputNumberDec} 
-            inputFunctionState={e => handleNumberMaxOfCharacters(e.target.value)} 
+            inputFunctionState={e => handleNumberMaxOfCharacters(e.target.value)}
+            inputKeyDownFunction={e => handleKeyDownPermission(e.key)} 
             isCounterInput={true}
             maxNumberOfCharacters={6}
             charactersCounter={inputNumberDec.length}
