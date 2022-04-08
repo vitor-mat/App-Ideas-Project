@@ -81,7 +81,17 @@ const Bin2Dec: NextPage = () => {
 
   const handleNumberMaxOfCharacters = (inputValue: string) => {
 
-    if((inputNumberDec.length < 6 || inputNumberDec.length > inputValue.length) && (!!Number(inputValue) || keyDownOnInput === "Backspace")){
+    const numberMaxOfCharacters = 6
+
+    const inputValueisLowerThanLimit = inputNumberDec.length < numberMaxOfCharacters
+
+    const decreaseInputValueFromLimit = inputNumberDec.length > inputValue.length
+
+    const inputKeyIsANumberValid = !!Number(inputValue)
+
+    const inputKeyIsBackspace = keyDownOnInput === "Backspace"
+
+    if(( inputValueisLowerThanLimit || decreaseInputValueFromLimit) && ( inputKeyIsANumberValid || inputKeyIsBackspace)){
       setInputNumberDec(inputValue)
       setTextInputColor(colors.black[100])
       setErrorVisibilityStatus(false)
