@@ -95,7 +95,12 @@ const Bin2Dec: NextPage = () => {
         justifyContent="center"
       >
         <Form onSubmit={e => handleSubmit(e)}>
-          <Input placeHolder="Type your number" type="number" inputVariableState={inputNumberDec} inputFunctionState={e => handleNumberMaxOfCharacters(e.target.value)} />
+          <Input 
+            placeHolder="Type your number" 
+            type="number" 
+            inputVariableState={inputNumberDec} 
+            inputFunctionState={e => handleNumberMaxOfCharacters(e.target.value)} 
+          />
           <Alert variant="Erro" message={errorMessage} visible={errorVisibilitStatus}/>
            <Button>
             Convert
