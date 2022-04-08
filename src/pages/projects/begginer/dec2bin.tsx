@@ -21,7 +21,6 @@ const Bin2Dec: NextPage = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-
     if(inputValidation()){
       convertInputDecNumberToBin()
     }
@@ -100,6 +99,9 @@ const Bin2Dec: NextPage = () => {
             type="number" 
             inputVariableState={inputNumberDec} 
             inputFunctionState={e => handleNumberMaxOfCharacters(e.target.value)} 
+            isCounterInput={true}
+            maxNumberOfCharacters={6}
+            charactersCounter={inputNumberDec.length}
           />
           <Alert variant="Erro" message={errorMessage} visible={errorVisibilitStatus}/>
            <Button>
