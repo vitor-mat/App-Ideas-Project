@@ -15,9 +15,10 @@ interface Props{
   isCounterInput?: boolean;
   maxNumberOfCharacters?: number;
   charactersCounter?: number;
+  textColor?: string;
 }
 
-export const Input:NextPage<Props> = ({ placeHolder, type="text", inputVariableState="", inputFunctionState, isCounterInput=false, maxNumberOfCharacters, charactersCounter }) => {
+export const Input:NextPage<Props> = ({ placeHolder, type="text", inputVariableState="", inputFunctionState, isCounterInput=false, maxNumberOfCharacters, charactersCounter, textColor }) => {
 
   if(isCounterInput && maxNumberOfCharacters === undefined){
     throw "prop 'isCounterInput' is true but prop 'maxNumberOfCharacters' not found";
@@ -37,10 +38,10 @@ export const Input:NextPage<Props> = ({ placeHolder, type="text", inputVariableS
 
   return(
     <S.Container>
-      <S.Input placeholder={placeHolder} type={type} onChange={inputFunctionState} value={inputVariableState}/>
+      <S.Input placeholder={placeHolder} type={type} onChange={inputFunctionState} value={inputVariableState} textColor={textColor}/>
       {isCounterInput && type=="number" && (
         <S.CounterContainer>
-          <S.NumberLimitCounter>{`${charactersCounter}/${maxNumberOfCharacters}`}</S.NumberLimitCounter>
+          <S.NumberLimitCounter textColor={textColor}>{`${charactersCounter}/${maxNumberOfCharacters}`}</S.NumberLimitCounter>
         </S.CounterContainer>
       )}
     </S.Container>

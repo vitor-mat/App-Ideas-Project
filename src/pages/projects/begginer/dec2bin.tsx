@@ -3,6 +3,8 @@ import { NextPage } from 'next';
 import React from 'react';
 import { FormEvent } from 'react';
 
+import { colors } from '../../../styles/colors';
+
 import { Navegation } from '../../../components/Navegation';
 import { HorizontalFlex } from '../../../components/DesignSystemElements/HorizontalFlex';
 import { Heading } from '../../../components/DesignSystemElements/Heading';
@@ -18,6 +20,7 @@ const Bin2Dec: NextPage = () => {
   const [errorVisibilitStatus, setErrorVisibilityStatus] = React.useState(false)
   const [errorMessage, setErrorMessage] = React.useState("")
   const [numberDecConvertedToBin, setNumberDecConvertedToBin] = React.useState("")
+  const [textInputColor, setTextInputColor] = React.useState(colors.black[100])
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
@@ -75,8 +78,14 @@ const Bin2Dec: NextPage = () => {
 
 
   const handleNumberMaxOfCharacters = (inputValue: string) => {
+
     if(inputNumberDec.length < 6 || inputNumberDec.length > inputValue.length){
       setInputNumberDec(inputValue)
+      setTextInputColor(colors.black[100])
+    }
+
+    if(inputValue.length == 7){
+      setTextInputColor(colors.red[200])
     }
   }
 
@@ -102,6 +111,7 @@ const Bin2Dec: NextPage = () => {
             isCounterInput={true}
             maxNumberOfCharacters={6}
             charactersCounter={inputNumberDec.length}
+            textColor={textInputColor}
           />
           <Alert variant="Erro" message={errorMessage} visible={errorVisibilitStatus}/>
            <Button>

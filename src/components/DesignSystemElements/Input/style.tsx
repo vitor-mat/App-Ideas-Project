@@ -16,11 +16,20 @@ export const CounterContainer = styled.div`
   align-items: center;
 `
 
-export const NumberLimitCounter = styled.span`
+interface NumberLimitCounterType{
+  textColor?: string;
+}
+
+export const NumberLimitCounter = styled.span<NumberLimitCounterType>`
   font-weight: 700;
+  ${({ textColor }) => textColor ? `color: ${textColor};` : ""}
 `
 
-export const Input = styled.input`
+interface InputType{
+  textColor?: string;
+}
+
+export const Input = styled.input<InputType>`
   width: 100%;
   height: 40px;
   border-radius: 5px;
@@ -30,6 +39,7 @@ export const Input = styled.input`
   font-size: 16px;
   color: black;
   border: 2px solid black;
+  ${({ textColor }) => textColor ? `color: ${textColor};` : ""}
 
   &::placeholder{
     opacity: .7

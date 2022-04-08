@@ -6,6 +6,10 @@ export const colors = {
     100: "blue"
   },
   red:{
-    100: "#FFC0CB"
+    100: "#FFC0CB",
+    200: "red"
+  },
+  black:{
+    100: "black"
   }
 }
