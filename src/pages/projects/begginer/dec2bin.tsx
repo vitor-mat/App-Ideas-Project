@@ -31,6 +31,7 @@ const Bin2Dec: NextPage = () => {
     
 
     if(isInputEmptyValidation() || isNotInputValueLowerThanZero() || isInputValueInteger()){
+      setNumberDecConvertedToBin("")
       setErrorVisibilityStatus(true)
       return false;
     }
