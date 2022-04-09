@@ -14,7 +14,7 @@ import { Button } from '../../../components/DesignSystemElements/Button';
 import { Text } from '../../../components/DesignSystemElements/Text';
 import { Alert } from '../../../components/DesignSystemElements/Alert';
 
-const Bin2Dec: NextPage = () => {
+const Dec2Bin: NextPage = () => {
 
   const [inputNumberDec, setInputNumberDec] = React.useState("")
   const [errorVisibilitStatus, setErrorVisibilityStatus] = React.useState(false)
@@ -150,4 +150,4 @@ const Bin2Dec: NextPage = () => {
   )
 }
 
-export default Bin2Dec
+export default Dec2Bin
