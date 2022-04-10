@@ -41,8 +41,8 @@ export const Input:NextPage<Props> = ({ placeHolder, type="text", inputVariableS
 
   return(
     <S.Container>
-      <S.Input placeholder={placeHolder} type={type} onChange={inputFunctionState} onKeyDown={inputKeyDownFunction} value={inputVariableState} textColor={textColor}/>
-      {isCounterInput && type=="number" && (
+      <S.Input placeholder={placeHolder} type={type} onChange={inputFunctionState} maxLength={6} onKeyDown={inputKeyDownFunction} value={inputVariableState} textColor={textColor}/>
+      {isCounterInput && type=="text" && (
         <S.CounterContainer>
           <S.NumberLimitCounter textColor={textColor}>{`${charactersCounter}/${maxNumberOfCharacters}`}</S.NumberLimitCounter>
         </S.CounterContainer>

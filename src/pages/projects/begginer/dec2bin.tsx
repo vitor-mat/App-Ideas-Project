@@ -14,6 +14,8 @@ import { Button } from '../../../components/DesignSystemElements/Button';
 import { Text } from '../../../components/DesignSystemElements/Text';
 import { Alert } from '../../../components/DesignSystemElements/Alert';
 
+export const testFunction = () => true
+
 const Dec2Bin: NextPage = () => {
 
   const [inputNumberDec, setInputNumberDec] = React.useState("")
@@ -79,33 +81,27 @@ const Dec2Bin: NextPage = () => {
   }
 
 
-  const handleNumberMaxOfCharacters = (inputValue: string) => {
-
-    const numberMaxOfCharacters = 6
-
-    const inputValueisLowerThanLimit = inputNumberDec.length < numberMaxOfCharacters
-
-    const decreaseInputValueFromLimit = inputNumberDec.length > inputValue.length
+  const handleCharacterInputForOnlyNumbers = (inputValue: string) => {
 
     const inputKeyIsANumberValid = !!Number(inputValue)
 
     const inputKeyIsBackspace = keyDownOnInput === "Backspace"
 
-    if(( inputValueisLowerThanLimit || decreaseInputValueFromLimit) && ( inputKeyIsANumberValid || inputKeyIsBackspace)){
+    if(inputKeyIsANumberValid || inputKeyIsBackspace){
       setInputNumberDec(inputValue)
       setTextInputColor(colors.black[100])
       setErrorVisibilityStatus(false)
-    }
-
-    if(inputValue.length == 7){
-      setTextInputColor(colors.red[200])
-      setErrorVisibilityStatus(true)
-      setErrorMessage("Number max of characters for input was achived.")
     }
   }
 
   const handleKeyDownPermission = (keyDownValue: string) => {
     setKeyDownOnInput(keyDownValue)
+
+    if(inputNumberDec.length == 6 && keyDownValue !== "Backspace"){
+      setTextInputColor(colors.red[200])
+      setErrorVisibilityStatus(true)
+      setErrorMessage("Number max of characters for input was achived.")
+    }
   }
 
   return(
@@ -124,9 +120,9 @@ const Dec2Bin: NextPage = () => {
         <Form onSubmit={e => handleSubmit(e)}>
           <Input 
             placeHolder="Type your number" 
-            type="number" 
+            type="text" 
             inputVariableState={inputNumberDec} 
-            inputFunctionState={e => handleNumberMaxOfCharacters(e.target.value)}
+            inputFunctionState={e => handleCharacterInputForOnlyNumbers(e.target.value)}
             inputKeyDownFunction={e => handleKeyDownPermission(e.key)} 
             isCounterInput={true}
             maxNumberOfCharacters={6}
