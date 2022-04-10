@@ -13,7 +13,7 @@ describe("user interaction with input", () => {
     expect(input).toBeInTheDocument()
   })
 
-  it('when user type the input value change', () => {
+  it('should showw numbers that user type on input', () => {
     const { debug } = render(<Dec2Bin />)
     const input = screen.getByPlaceholderText('Type your number')
     userEvent.type(input, '123456')
