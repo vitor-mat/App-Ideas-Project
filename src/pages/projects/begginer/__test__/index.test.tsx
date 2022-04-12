@@ -45,7 +45,7 @@ describe("user interaction with input", () => {
 describe("apllication response when the form is submited", () => {
   it('input is cleaned when input is submited', () => {
     const { debug } = render(<Dec2Bin />)
-    const input = screen.getByPlaceholderText("Type your number")
+    const input = screen.getByPlaceholderText('Type your number')
     const button = screen.getByText('Convert')
     userEvent.type(input, '123')
     userEvent.click(button)
@@ -57,6 +57,13 @@ describe("teste counter behavor", () => {
   it("counter starts in the document with 0/6", () => {
     const { debug } = render(<Dec2Bin />)
     const counter = screen.getByText("0/6")
+    expect(counter).toBeInTheDocument()
+  })
+  it("counter increases as the user types", () => {
+    const { debug } = render(<Dec2Bin />)
+    const input = screen.getByPlaceholderText('Type your number')
+    userEvent.type(input, '12')
+    const counter = screen.getByText("2/6")
     expect(counter).toBeInTheDocument()
   })
 })
