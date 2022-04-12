@@ -52,3 +52,11 @@ describe("apllication response when the form is submited", () => {
     expect(input).toHaveValue('')
   })
 })
+
+describe("teste counter behavor", () => {
+  it("counter starts in the document with 0/6", () => {
+    const { debug } = render(<Dec2Bin />)
+    const counter = screen.getByText("0/6")
+    expect(counter).toBeInTheDocument()
+  })
+})
