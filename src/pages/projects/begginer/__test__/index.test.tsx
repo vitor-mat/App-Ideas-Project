@@ -27,4 +27,11 @@ describe("user interaction with input", () => {
     expect(input).toHaveValue('123456')
   })
 
+  it('input not accept letters', () => {
+    const { debug } = render(<Dec2Bin />)
+    const input = screen.getByPlaceholderText('Type your number')
+    userEvent.type(input, 'abc')
+    expect(input).toHaveValue('')
+  })
+
 })
