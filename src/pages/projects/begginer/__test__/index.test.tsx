@@ -78,9 +78,19 @@ describe("teste counter behavor", () => {
 describe("error alert messages", () => {
   it("alert for submit with input empty", () => {
     const { debug } = render(<Dec2Bin />)
-    const button = screen.getByText("Convert")
+    const button = screen.getByText('Convert')
     userEvent.click(button)
-    const alert = screen.getByText("Input is empty.")
+    const alert = screen.getByText('Input is empty.')
+    expect(alert).toBeInTheDocument()
+  })
+
+  it("alert for submit with not integer value", () => {
+    const { debug } = render(<Dec2Bin />)
+    const input = screen.getByPlaceholderText('Type your number')
+    userEvent.type(input, '1.2')
+    const button = screen.getByText('Convert')
+    userEvent.click(button)
+    const alert = screen.getByText('Your number is not integer.')
     expect(alert).toBeInTheDocument()
   })
 })
