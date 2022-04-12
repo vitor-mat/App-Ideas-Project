@@ -34,4 +34,11 @@ describe("user interaction with input", () => {
     expect(input).toHaveValue('')
   })
 
+  it('input not accept symbols', () => {
+    const { debug } = render(<Dec2Bin />)
+    const input = screen.getByPlaceholderText('Type your number')
+    userEvent.type(input, '+-*/*&')
+    expect(input).toHaveValue('')
+  })
+
 })
