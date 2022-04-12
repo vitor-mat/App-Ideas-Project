@@ -40,5 +40,15 @@ describe("user interaction with input", () => {
     userEvent.type(input, '+-*/*&')
     expect(input).toHaveValue('')
   })
+})
 
+describe("apllication response when the form is submited", () => {
+  it('input is cleaned when input is submited', () => {
+    const { debug } = render(<Dec2Bin />)
+    const input = screen.getByPlaceholderText("Type your number")
+    const button = screen.getByText('Convert')
+    userEvent.type(input, '123')
+    userEvent.click(button)
+    expect(input).toHaveValue('')
+  })
 })
