@@ -66,4 +66,11 @@ describe("teste counter behavor", () => {
     const counter = screen.getByText("2/6")
     expect(counter).toBeInTheDocument()
   })
+  it("counter don't suppars the limit", () => {
+    const { debug } = render(<Dec2Bin />)
+    const input = screen.getByPlaceholderText('Type your number')
+    userEvent.type(input, '1234567')
+    const counter = screen.getByText("6/6")
+    expect(counter).toBeInTheDocument()
+  })
 })
