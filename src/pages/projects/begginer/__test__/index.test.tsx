@@ -93,4 +93,12 @@ describe("error alert messages", () => {
     const alert = screen.getByText('Your number is not integer.')
     expect(alert).toBeInTheDocument()
   })
+
+  it("alert if user try suppars the limit of characters on input", () => {
+    const { debug } = render(<Dec2Bin />)
+    const input = screen.getByPlaceholderText('Type your number')
+    userEvent.type(input, '1234567')
+    const alert = screen.getByText('Number max of characters for input was achived.')
+    expect(alert).toBeInTheDocument()
+  })
 })
