@@ -74,3 +74,13 @@ describe("teste counter behavor", () => {
     expect(counter).toBeInTheDocument()
   })
 })
+
+describe("error alert messages", () => {
+  it("alert for submit with input empty", () => {
+    const { debug } = render(<Dec2Bin />)
+    const button = screen.getByText("Convert")
+    userEvent.click(button)
+    const alert = screen.getByText("Input is empty.")
+    expect(alert).toBeInTheDocument()
+  })
+})
